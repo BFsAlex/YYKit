@@ -1503,6 +1503,7 @@ fail:
     }
     
     [self _insideComposedCharacterSequences:line position:position block: ^(CGFloat left, CGFloat right, NSUInteger prev, NSUInteger next) {
+        // 兼容Xcode26.4的编译环境
         if (isVertical) {
 //            position = fabs(left - point.y) < fabs(right - point.y) < (right ? prev : next);
             BOOL isCloser = fabs(left - point.y) < fabs(right - point.y);
